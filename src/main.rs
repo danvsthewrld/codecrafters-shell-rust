@@ -13,7 +13,7 @@ fn tokenize(input: &str) -> Vec<&str> {
 fn explain(proc_command: &str) {
     match proc_command {
         "echo" | "exit" | "type" => println!("{} is a shell builtin", proc_command),
-        _ => not_found(proc_command),
+        _ => println!("{}: not found", proc_command.trim())
     }
 }
 
