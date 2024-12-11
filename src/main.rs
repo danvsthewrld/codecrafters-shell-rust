@@ -24,7 +24,7 @@ fn main() {
 
         match token[..] {
             ["exit", code] => process::exit(code.parse::<i32>().unwrap()),
-            ["echo"] => println!("{}", token[1..].join(" ")),
+            ["echo", ..] => println!("{}", token[1..].join(" ")),
             _ => not_found(command),
         }
     }
