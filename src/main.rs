@@ -6,9 +6,9 @@ fn main() {
     let stdin = io::stdin();
     let mut input = String::new();
 
-    
+
     loop {
-        print!("$ ");
+        println!("$ ");
         io::stdout().flush().unwrap();
         stdin.read_line(&mut input).unwrap();
         input.pop();
