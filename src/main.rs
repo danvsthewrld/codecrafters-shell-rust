@@ -9,9 +9,12 @@ fn main() {
     io::stdout().flush().unwrap();
 
     while stdin.read_line(&mut input).is_ok() {
-        println!("{}: command not found", input.strip_suffix("\n").unwrap());
-        input.clear();
-        print!("$ ");
-        io::stdout().flush().unwrap();
+        match input.trim().to_lowercase().as_str() {
+            "exit" => break,
+            "exit 0" => break,
+            _ => println!("{}: command not found", input.trim()),
+            _ => print!("$ "),
+            _ =>io::stdout().flush().unwrap(),
+        }
     }
 }
