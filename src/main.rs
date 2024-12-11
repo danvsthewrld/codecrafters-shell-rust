@@ -13,8 +13,9 @@ fn main() {
             "exit" => break,
             "exit 0" => break,
             _ => println!("{}: command not found", input.trim()),
-            _ => print!("$ "),
-            _ =>io::stdout().flush().unwrap(),
+            
         }
+        print!("$ ");
+        io::stdout().flush().unwrap();
     }
 }
