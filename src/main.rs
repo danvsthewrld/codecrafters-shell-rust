@@ -2,21 +2,21 @@
 use std::io::{self, Write};
 
 fn main() {
-    // Wait for user input
-    let stdin = io::stdin();
-    let mut input = String::new();
-    print!("$ ");
-    io::stdout().flush().unwrap();
+    loop {
+        //Print $ and flush
+        print!("$ ");
+        io::stdout().flush().unwrap();
 
-    while stdin.read_line(&mut input).is_ok() {
+        //Wait for user input and handle
+        let stdin = io::stdin();
+        let mut input = String::new();
+        stdin.read_line(&mut input).unwrap();
+
         match input.trim().to_lowercase().as_str() {
             "exit" => break,
             "exit 0" => break,
             _ => println!("{}: command not found", input.trim()),
-        }
-        print!("$ ");
-        io::stdout().flush().unwrap();
-    };
+        };
+    }
 }
-
 
