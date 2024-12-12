@@ -24,7 +24,7 @@ fn explain(proc_command: &str, builtins: [&str; 3], path_env: &str, token: Vec<&
         if let Some(path) = split.find(|path| std::fs::metadata(format!("{}/{}", path, proc_command)).is_ok()) {
             println!("{proc_command} is {path}/{proc_command}");
         } else {
-            println!("{proc_command} not found");
+            println!("{proc_command}: not found");
         }
     }
 }
